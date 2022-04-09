@@ -7,43 +7,26 @@ import WishList from "./pages/WishList";
 import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
+  const setActive = ({ isActive }) => {
+    return { color: isActive ? "RED" : "" };
+  };
   return (
     <div className="App">
       <nav>
-        <NavLink
-          style={({ isActive }) => {
-            return { color: isActive ? "RED" : "" };
-          }}
-          to="/"
-        >
+        <NavLink style={setActive} to="/">
           Home
         </NavLink>
         ||
-        <NavLink
-          style={({ isActive }) => {
-            return { color: isActive ? "RED" : "" };
-          }}
-          to="/category"
-        >
+        <NavLink style={setActive} to="/category">
           {" "}
           Category{" "}
         </NavLink>{" "}
         ||
-        <NavLink
-          style={({ isActive }) => {
-            return { color: isActive ? "RED" : "" };
-          }}
-          to="/cart"
-        >
+        <NavLink style={setActive} to="/cart">
           Cart{" "}
         </NavLink>{" "}
         ||
-        <NavLink
-          style={({ isActive }) => {
-            return { color: isActive ? "RED" : "" };
-          }}
-          to="/wishlist"
-        >
+        <NavLink style={setActive} to="/wishlist">
           WishList{" "}
         </NavLink>
       </nav>
